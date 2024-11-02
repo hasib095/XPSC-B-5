@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+typedef double dl;
+#define endl "\n"
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define arr(a,n)  for(ll i =0; i < n; i++) cin >> a[i];
+#define all(v) v.begin(), v.end()
+#define srt(v)  sort(v.begin(), v.end());
+const int mod = 1e9+7;
+map<string,int>mp;
+void solve()
+{
+  string s;cin>>s;
+  if(mp[s]==0)cout<<"OK"<<endl;
+  else
+  {
+    cout<<s<<mp[s]<<endl;
+  }
+  mp[s]=mp[s]+1;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+#ifndef ONLINE_JUDGE
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+    // solve();
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
+}
