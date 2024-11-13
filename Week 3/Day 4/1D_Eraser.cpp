@@ -16,35 +16,40 @@ const int mod = 1e9+7;
 
 void solve()
 {
-    ll n;
-    cin >> n;
-    vl v(n);
-    
-    for (ll i = 0; i < n; i++)
-    {
-        cin >> v[i];
-    }
-    srt(v);
-    ll a,b,c;
-    a=v[n-1]-v[2];//first two
-    b=v[n-3]-v[0]; // last two
-    c=v[n-2]-v[1]; //first and last
-    cout<<min(a,min(b,c))<<endl;
+   int n, k;
+   cin >> n >> k;
+   string s;
+   cin >> s;
+   int l = 0, ans = 0, cnt = 0;
+   while (l < n)
+   {
+      if (s[l] == 'B')
+      {
+         ans++;
+         l = k + l;
+      }
+      else
+      {
+         l++;
+      }
+   }
+
+   cout << ans << endl;
 }
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
 #ifndef ONLINE_JUDGE
-    freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+   freopen("in.txt", "r", stdin);
+   freopen("out.txt", "w", stdout);
 #endif
-    // solve();
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
-    return 0;
+   // solve();
+   int t;
+   cin >> t;
+   while (t--)
+   {
+      solve();
+   }
+   return 0;
 }
