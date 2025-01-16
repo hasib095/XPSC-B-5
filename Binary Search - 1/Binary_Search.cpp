@@ -14,34 +14,25 @@ void solve()
     {
         cin >> v[i];
     }
+    bool ok = true;
     for (int i = 0; i < k; i++)
     {
-        int x;
-        cin >> x;
-        bool ok = false;
-        int l = 0, r = v.size() - 1;
+        int key, l = 0, r = n - 1, ans = -1, mid;
+        cin >> key;
         while (l <= r)
         {
-            int mid = (l + r) / 2;
-            if (v[mid] == x)
+            mid = (l + r) / 2;
+            if (key >= v[mid])
             {
-
-                ok = true;
-                break;
-            }
-            else if (v[mid] > x)
-            {
-                r = mid - 1;
+                ans = mid;
+                l = mid + 1;
             }
             else
             {
-                l = mid + 1;
+                r = mid - 1;
             }
         }
-        if (ok)
-            cout << "YES" << endl;
-        else
-            cout << "NO" << endl;
+        cout << ans + 1 << endl;
     }
 }
 int main()
