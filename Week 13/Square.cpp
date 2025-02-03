@@ -11,20 +11,13 @@ void solve()
     int wi, ln;
     cin >> a >> b >> c >> d;
 
-    if (max(a, b) == max(c, d))
+    if (max(a, b) == max(c, d) && (min(a, b) + min(c, d)==max(a,b)))
     {
-        wi = max(a, b);
-    }
-    // cout<<wi<<endl;
-    ln = min(a, b) + min(c, d);
-    // cout<<ln<<endl;
-    if (wi == ln)
-    {
-        cout << "YES" << endl;
+        cout << "Yes" << endl;
     }
     else
     {
-        cout << "NO" << endl;
+        cout << "No" << endl;
     }
 }
 int main()
