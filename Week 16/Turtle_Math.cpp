@@ -15,7 +15,6 @@ void solve()
         cin >> v[i];
         sum += v[i];
     }
-    //  sort(v.begin(),v.end());
     if (sum % 3 == 0)
     {
         cout << 0 << endl;
